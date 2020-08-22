@@ -7,8 +7,9 @@ var stopped = false
 func _ready():
 	get_node("Button").connect("pressed", self, "_hit_that_button")
 	
-func _hit_that_button():
+func _hit_that_button(value):
 	get_node("Label").text = "HELLO!"
+	$Count.text = str(value)
 	stopped = true
 	
 func _process(delta):

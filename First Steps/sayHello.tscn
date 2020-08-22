@@ -1,16 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sayHello.gd" type="Script" id=1]
+[ext_resource path="res://timerExample.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
-[node name="Panel" type="Panel"]
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Oh this is a useful description box!"
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 164, 102 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = 1.0
 margin_right = 334.0
-margin_bottom = 293.0
+margin_bottom = 294.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Panel"]
 margin_left = 93.143
 margin_top = 25.9541
 margin_right = 220.143
@@ -18,14 +35,29 @@ margin_bottom = 63.9541
 text = "This is a label"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button" type="Button" parent="."]
-margin_left = 54.0
-margin_top = 79.0
-margin_right = 284.0
-margin_bottom = 185.0
+[node name="Count" type="Label" parent="Panel"]
+margin_left = 210.143
+margin_top = 2.9541
+margin_right = 337.143
+margin_bottom = 40.9541
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 50.0
+margin_top = 149.0
+margin_right = 280.0
+margin_bottom = 255.0
 text = "Press Me!"
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/Button" to="Panel" method="_on_Button_pressed"]
