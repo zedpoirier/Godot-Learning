@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sayHello.gd" type="Script" id=1]
-[ext_resource path="res://timerExample.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://IntroAssets/timerExample.gd" type="Script" id=1]
+[ext_resource path="res://IntroAssets/sayHello.gd" type="Script" id=2]
+[ext_resource path="res://IntroAssets/icon.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "Oh this is a useful description box!"
 }
@@ -22,7 +22,7 @@ texture = ExtResource( 3 )
 margin_top = 1.0
 margin_right = 334.0
 margin_bottom = 294.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
