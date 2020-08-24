@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="First Steps"
-run/main_scene="res://IntroAssets/sayHello.tscn"
+run/main_scene="res://FirstGameAssets/Main.tscn"
 config/icon="res://IntroAssets/icon.png"
 
 [display]
