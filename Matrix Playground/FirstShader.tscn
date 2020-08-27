@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://new_shadermaterial.tres" type="Material" id=1]
+
+[node name="TextureRect" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.423529, 0.47451, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
