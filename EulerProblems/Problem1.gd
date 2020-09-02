@@ -3,10 +3,11 @@ extends Control
 var target = 1000
 var d1 = 3 
 var d2 = 5
-var dividors = [3 , 5]
+var dividors = [3 , 5] # not implemented
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Problem 1:")
 	print("dividers = 3, 5")
 	print("target = " + str(target))
 	
@@ -20,11 +21,3 @@ func _ready():
 		target -= 1
 	
 	print("sum = " + str(i))
-	
-	
-	#pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
