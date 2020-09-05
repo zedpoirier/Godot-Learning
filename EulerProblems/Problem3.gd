@@ -15,9 +15,10 @@ func _ready():
 	for i in range(1, target):
 		if target % i == 0:
 			allFactors.append(i)
-			print(i)
+			#print(i)
+		printraw("\r" + str(i))
 	# find the primes in the list of factors
-	print("All Primes:")
+	print("\nAll Primes:")
 	for f in allFactors:
 		if isPrime(f):
 			allPrimeFactors.append(f)
