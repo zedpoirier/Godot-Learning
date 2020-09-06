@@ -20,4 +20,4 @@ func _ready():
 			i += target
 		target -= 1
 	
-	print("sum = " + str(i) + "\n")
+	print("sum = " + str(i))

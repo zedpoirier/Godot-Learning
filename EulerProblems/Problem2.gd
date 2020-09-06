@@ -8,7 +8,7 @@ var sum = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Problem 2:")
+	print("\nProblem 2:")
 	while curr < maxVal:
 		if curr % 2 == 0:
 			sum += curr
