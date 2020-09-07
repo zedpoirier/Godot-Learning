@@ -2,20 +2,27 @@ extends Node2D
 
 export (PackedScene) var Mob
 var score
+var vp_size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_bounds()
 	randomize()
-	#new_game()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func set_bounds():
+	vp_size = get_viewport().size
+	# will adjust the path node for mob spawing to the screen shape
+	$MobPath.curve.set_point_position(0, Vector2(0,0))
+	$MobPath.curve.set_point_position(1, Vector2(vp_size.x, 0))
+	$MobPath.curve.set_point_position(2, vp_size)
+	$MobPath.curve.set_point_position(3, Vector2(0, vp_size.y))
+	# set background color rect to fit screen shape
+	$ColorRect.margin_right = vp_size.x
+	$ColorRect.margin_bottom = vp_size.y
 
 func new_game():
 	score = 0
-	$Player.start($StartPos.position)
+	$Player.start(vp_size * 0.5)
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
@@ -46,6 +53,8 @@ func _on_MobTimer_timeout():
 	# Set the velocity (speed & direction).
 	mob.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)
+	if mob.linear_velocity.x < 0:
+		mob.get_node("AnimatedSprite").flip_v = true
 
 func _on_ScoreTimer_timeout():
 	score += 1

@@ -1,18 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://FirstGameAssets/art/enemyFlyingAlt_1.png" type="Texture" id=1]
-[ext_resource path="res://FirstGameAssets/art/enemyFlyingAlt_2.png" type="Texture" id=2]
-[ext_resource path="res://FirstGameAssets/art/enemySwimming_2.png" type="Texture" id=3]
-[ext_resource path="res://FirstGameAssets/art/enemyWalking_1.png" type="Texture" id=4]
-[ext_resource path="res://FirstGameAssets/art/enemyWalking_2.png" type="Texture" id=5]
-[ext_resource path="res://FirstGameAssets/art/enemySwimming_1.png" type="Texture" id=6]
+[ext_resource path="res://FirstGameAssets/art/shark1.png" type="Texture" id=1]
+[ext_resource path="res://FirstGameAssets/art/shark2.png" type="Texture" id=2]
 [ext_resource path="res://FirstGameAssets/Mob.gd" type="Script" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "walk",
+"name": "swim",
 "speed": 3.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
@@ -20,19 +16,20 @@ animations = [ {
 "name": "fly",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "swim",
+"name": "walk",
 "speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 37.1785
-height = 25.5873
+radius = 24.27
+height = 37.9351
 
 [node name="Mob" type="RigidBody2D" groups=[
 "mobs",
 ]]
+scale = Vector2( 1.4, 1.4 )
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 7 )

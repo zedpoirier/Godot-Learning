@@ -18,25 +18,17 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
-func _input(event):
-	if event is InputEventScreenTouch and event.pressed:
-		target = event.position
+#func _input(event):
+#	if event is InputEventMouseButton:
+#		target = event.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# define velocity and get vector from input actions
 	# actions can be defined in Project Settings
 	var velocity = Vector2()
-	
-	# keyboard input has been disabled for exporting to mobile
-#	if Input.is_action_pressed("ui_up"):
-#		velocity.y += -1 #godot uses a negative y in 2d
-#	if Input.is_action_pressed("ui_down"):
-#		velocity.y += 1
-#	if Input.is_action_pressed("ui_right"):
-#		velocity.x += 1
-#	if Input.is_action_pressed("ui_left"):
-#		velocity.x += -1
+	if Input.is_action_pressed("mouse_left_click"):
+		target = get_viewport().get_mouse_position()
 		
 	# Touch and mouse based input system
 	if position.distance_to(target) > 10:
