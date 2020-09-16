@@ -1,12 +1,12 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://Shaders/Warping.shader" type="Shader" id=1]
+[ext_resource path="res://Shaders/SpaceSquish.shader" type="Shader" id=1]
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/time_value = 10.0
-shader_param/amplitude = Vector2( 200, 50 )
+shader_param/value = 0.001
+shader_param/amplitude = Vector2( 0.5, 0 )
 shader_param/divisions = Vector2( 10, 10 )
-shader_param/twist = 3.0
+shader_param/twist = 1.0
 shader_param/rot90ccw = Transform2D( 0, 1, 1, 0, 0, 0 )
 shader_param/bosCorrection = Transform2D( 1, 0, 0, -1, 0, 0 )

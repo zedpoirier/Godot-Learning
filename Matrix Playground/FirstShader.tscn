@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://new_shadermaterial.tres" type="Material" id=1]
 [ext_resource path="res://TranslateExample.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Shaders/Colors.shader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/colorA = Vector3( 0.301, 0.141, 0.912 )
+shader_param/colorB = Vector3( 1, 0.833, 0.224 )
 
 [node name="TextureRect" type="TextureRect"]
 anchor_right = 1.0
@@ -11,10 +17,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="GridMessy" type="ColorRect" parent="."]
+visible = false
 material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -5.88626
+margin_right = -5.88626
+color = Color( 0.423529, 0.47451, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colors" type="ColorRect" parent="."]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.563141
+margin_top = -1.96335
+margin_right = -0.563141
+margin_bottom = -1.96335
 color = Color( 0.423529, 0.47451, 0.0745098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
